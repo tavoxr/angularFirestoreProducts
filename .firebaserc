@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-products-55b2e": {
+      "hosting": {
+        "angularFirestoreProducts": [
+          "angular-products-55b2e"
+        ]
+      }
+    }
+  }
+}

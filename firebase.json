@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "angularFirestoreProducts",
+      "public": "dist/angularFirestoreProducts",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
