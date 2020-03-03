@@ -28,8 +28,15 @@ export class ProductsComponent implements OnInit {
 
   editProduct($event,product){
     this.editingProduct = product;
+    this.editing = !this.editing;
     console.log(product);
   }
 
+  updateProduct(){
+    this.productService.updateProduct(this.editingProduct);
+    this.editingProduct= {} as Product;
+    this.editing= false;
+
+  }
 
 }
