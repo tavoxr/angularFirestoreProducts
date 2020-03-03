@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
 import{Product} from '../models/product'
 import {Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -10,8 +10,8 @@ import 'firebase/firestore';
 })
 export class ProductService {
 
-  productsCollection: AngularFirestoreCollection ;
-  productDoc;
+  productsCollection: AngularFirestoreCollection<Product> ;
+  productDoc: AngularFirestoreDocument<Product> ;
   products:Observable<Product[]> ;
 
   constructor(public db:AngularFirestore) { 
@@ -33,9 +33,17 @@ export class ProductService {
     return this.products;
   }
 
-  // deleteProduct(product:Product){
-  //   this
+  addProduct(product: Product){
+    this.productsCollection.add(product);
+
+  }
 
 
-  // }
+
+   deleteProduct(product:Product){
+     this.productDoc = this.db.doc(`products/${product.id}`);
+     this.productDoc.delete();
+
+
+   }
 }
