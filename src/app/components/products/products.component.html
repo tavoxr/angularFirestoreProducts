@@ -5,9 +5,12 @@
             {{product.name}} <br/>
             {{product.description}} <br/>
             {{product.price}} <br/>
-    
+            <button (click)="deleteProduct($event,product)">
+                Delete
+            </button>
         </li>
     </ul>
+
 </div>
 
 <ng-template #noProducts>

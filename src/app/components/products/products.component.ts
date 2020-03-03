@@ -18,6 +18,10 @@ export class ProductsComponent implements OnInit {
     })
   }
 
+  deleteProduct(event,product){
+    console.log(product)
+  }
+
 
 
 }
